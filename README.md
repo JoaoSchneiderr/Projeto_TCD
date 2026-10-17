@@ -6,6 +6,10 @@ O Adivinha Game é um site inspirado em jogos de adivinhação, como Termo e Pok
 
 A cada tentativa, o jogador utiliza as informações fornecidas para formular suas hipóteses e encontrar a resposta correta, colocando à prova seus conhecimentos sobre o universo dos games. A proposta é oferecer uma experiência interativa, divertida e desafiadora, incentivando o raciocínio, a memória e a descoberta de novos jogos.
 
-# Link vídeo com apresentação da Fase 1
+## Autor
+
+João Lucas Schneider
+
+## Link vídeo com apresentação da Fase 1
 
 https://www.youtube.com/watch?v=MUl1XNIRLQw
