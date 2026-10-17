@@ -1,6 +1,4 @@
-# PROJETO TCD
-
-## ADIVINHA GAME
+# ADIVINHA GAME
 
 O Adivinha Game é um site inspirado em jogos de adivinhação, como Termo e Pokedle, no qual o objetivo do usuário é descobrir qual jogo está sendo apresentado com base em dicas disponibilizadas pela plataforma.
 
