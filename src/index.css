@@ -1,0 +1,26 @@
+/* Ajustes gerais: tira as margens e estilos padrão do navegador */
+* {
+  box-sizing: border-box;
+}
+ 
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol {
+  margin: 0;
+}
+ 
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+ 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ 
