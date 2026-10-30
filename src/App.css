@@ -9,22 +9,24 @@
   --cor-escondido: #cbd5e1;
   --cor-erro: #ef4444;
   --cor-erro-fundo: #fee2e2;
- 
+  --cor-acerto: #16a34a;
+  --cor-acerto-fundo: #bbf7d0;
+
   --espaco-p: 8px;
   --espaco-m: 16px;
   --espaco-g: 32px;
- 
+
   --raio: 12px;
   --raio-p: 8px;
   --borda: 2px solid var(--cor-borda);
- 
+
   --fonte: 'Pixelify Sans', monospace;
   --texto-p: 14px;
   --texto-m: 16px;
   --texto-g: 18px;
   --texto-titulo: 28px;
 }
- 
+
 /* ===== Base (mobile) ===== */
 .pagina {
   min-height: 100vh;
@@ -33,12 +35,12 @@
   font-family: var(--fonte);
   font-size: var(--texto-m);
 }
- 
+
 /* Cabeçalho */
 .cabecalho {
   border-bottom: var(--borda);
 }
- 
+
 .cabecalho-conteudo {
   max-width: 1152px;
   margin: 0 auto;
@@ -49,26 +51,26 @@
   align-items: center;
   gap: var(--espaco-m);
 }
- 
+
 .logo {
   font-size: var(--texto-g);
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
- 
+
 .link-inicio {
   font-size: var(--texto-p);
   color: var(--cor-texto-suave);
 }
- 
+
 .abas {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: var(--espaco-p);
 }
- 
+
 .aba {
   border: var(--borda);
   border-radius: var(--raio-p);
@@ -76,25 +78,25 @@
   text-align: center;
   font-size: var(--texto-p);
 }
- 
+
 .aba-ativa {
   background-color: var(--cor-destaque);
   font-weight: bold;
 }
- 
+
 /* Conteúdo principal */
 .conteudo {
   max-width: 1152px;
   margin: 0 auto;
   padding: 0 var(--espaco-m);
 }
- 
+
 .titulo-secao {
   margin-top: var(--espaco-g);
   margin-bottom: var(--espaco-m);
   font-size: var(--texto-g);
 }
- 
+
 .botao {
   border: var(--borda);
   border-radius: var(--raio-p);
@@ -106,7 +108,7 @@
   font-weight: bold;
   cursor: pointer;
 }
- 
+
 /* Tela inicial: ocupa a altura toda da tela, sem cabeçalho */
 .tela-inicial {
   min-height: 100vh;
@@ -115,32 +117,32 @@
   display: flex;
   flex-direction: column;
 }
- 
+
 /* margin-top: auto empurra o botão para o fim da tela inicial */
 .area-tema {
   margin-top: auto;
   padding-top: var(--espaco-g);
 }
- 
+
 .titulo-principal {
   font-size: var(--texto-titulo);
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
- 
+
 .subtitulo {
   margin-top: var(--espaco-p);
   text-align: center;
   color: var(--cor-texto-suave);
 }
- 
+
 /* Listagem secundária: modos */
 .modos {
   display: grid;
   gap: var(--espaco-m);
 }
- 
+
 .modo-card {
   display: flex;
   align-items: center;
@@ -149,7 +151,7 @@
   border-radius: var(--raio);
   padding: var(--espaco-m);
 }
- 
+
 .modo-icone {
   width: 48px;
   height: 48px;
@@ -161,27 +163,27 @@
   font-size: 24px;
   font-weight: bold;
 }
- 
+
 .modo-texto {
   flex: 1;
 }
- 
+
 .modo-nome {
   font-size: var(--texto-m);
   text-transform: uppercase;
 }
- 
+
 /* No mobile o card mostra só ícone e nome */
 .modo-descricao,
 .modo-botao {
   display: none;
 }
- 
+
 .modo-descricao {
   font-size: var(--texto-p);
   color: var(--cor-texto-suave);
 }
- 
+
 /* Como jogar: no mobile é uma caixa só */
 .como-jogar {
   border: var(--borda);
@@ -189,43 +191,43 @@
   padding: var(--espaco-m);
   font-size: var(--texto-p);
 }
- 
+
 .passo {
   padding: 2px 0;
 }
- 
+
 /* Tela do jogo: começa com o cabeçalho */
 .tela-jogo {
   min-height: 100vh;
 }
- 
+
 .jogo {
   padding-bottom: var(--espaco-g);
 }
- 
+
 .pista {
   border: var(--borda);
   border-radius: var(--raio);
   padding: var(--espaco-m);
 }
- 
+
 .linha-escondida {
   height: 8px;
   margin-top: var(--espaco-p);
   border-radius: 4px;
   background-color: var(--cor-escondido);
 }
- 
+
 .linha-curta {
   width: 66%;
 }
- 
+
 .trecho-escondido {
   margin-top: var(--espaco-m);
   font-size: var(--texto-p);
   color: var(--cor-texto-suave);
 }
- 
+
 .bloco-escondido {
   display: inline-block;
   width: 48px;
@@ -234,13 +236,13 @@
   border-radius: 4px;
   background-color: var(--cor-escondido);
 }
- 
+
 .dicas {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--espaco-p);
 }
- 
+
 .dica {
   border: 2px dashed var(--cor-borda-suave);
   border-radius: var(--raio);
@@ -249,21 +251,21 @@
   font-size: var(--texto-p);
   color: var(--cor-texto-suave);
 }
- 
+
 .area-chute {
   margin-top: var(--espaco-g);
 }
- 
+
 .tentativas {
   margin-bottom: var(--espaco-p);
   font-size: var(--texto-p);
 }
- 
+
 .form-chute {
   display: flex;
   gap: var(--espaco-p);
 }
- 
+
 .campo {
   flex: 1;
   min-width: 0;
@@ -273,23 +275,23 @@
   font-family: var(--fonte);
   font-size: var(--texto-m);
 }
- 
+
 .sugestoes {
   width: 75%;
   margin-top: 4px;
   border: var(--borda);
   font-size: var(--texto-p);
 }
- 
+
 .sugestoes li {
   padding: var(--espaco-p) var(--espaco-m);
 }
- 
+
 .chutes {
   display: grid;
   gap: var(--espaco-p);
 }
- 
+
 .chute {
   border: var(--borda);
   border-radius: var(--raio-p);
@@ -297,54 +299,54 @@
   text-align: center;
   font-weight: bold;
 }
- 
+
 .chute-errado {
   border-color: var(--cor-erro);
   background-color: var(--cor-erro-fundo);
 }
- 
+
 /* Listagem principal: grade de jogos (2 colunas no mobile) */
 .jogos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--espaco-p);
 }
- 
+
 .jogo-card {
   border: var(--borda);
   border-radius: var(--raio);
   padding: var(--espaco-m) var(--espaco-p);
 }
- 
+
 .jogo-card-errado {
   border-color: var(--cor-erro);
   background-color: var(--cor-erro-fundo);
 }
- 
+
 .jogo-nome {
   font-size: var(--texto-m);
 }
- 
+
 .jogo-genero {
   font-size: var(--texto-p);
   color: var(--cor-texto-suave);
 }
- 
+
 .jogo-nota {
   font-size: var(--texto-p);
 }
- 
+
 /* Rodapé */
 .rodape {
   max-width: 1152px;
   margin: 0 auto;
   padding: 0 var(--espaco-m);
 }
- 
+
 .botao-tema {
   font-weight: normal;
 }
- 
+
 .rodape-texto {
   margin-top: var(--espaco-g);
   padding: var(--espaco-m) 0;
@@ -353,23 +355,135 @@
   font-size: var(--texto-p);
   color: var(--cor-texto-suave);
 }
- 
+
+/* ===== Modo Capa ===== */
+/* Espaço da imagem da pista (capa ou mapa) */
+.imagem-pista {
+  height: 240px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: var(--borda);
+  border-radius: var(--raio);
+  background-color: var(--cor-destaque);
+}
+
+.imagem-legenda {
+  border: 2px dashed var(--cor-borda-suave);
+  padding: var(--espaco-p) var(--espaco-m);
+  font-size: var(--texto-p);
+  color: var(--cor-texto-suave);
+}
+
+/* Card de "Você acertou!" */
+.acerto {
+  border: 2px solid var(--cor-acerto);
+  border-radius: var(--raio);
+  padding: var(--espaco-m);
+}
+
+.acerto-titulo {
+  font-size: var(--texto-titulo);
+  color: var(--cor-acerto);
+}
+
+.acerto-conteudo {
+  display: flex;
+  gap: var(--espaco-m);
+  margin-top: var(--espaco-m);
+}
+
+.acerto-capa {
+  width: 64px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: var(--borda);
+  font-size: var(--texto-p);
+  color: var(--cor-texto-suave);
+}
+
+.acerto-nome {
+  font-size: var(--texto-g);
+  font-weight: bold;
+}
+
+.acerto-detalhe {
+  font-size: var(--texto-p);
+}
+
+.acerto-botao {
+  margin-top: var(--espaco-m);
+}
+
+.chute-certo,
+.jogo-card-certo {
+  border-color: var(--cor-acerto);
+  background-color: var(--cor-acerto-fundo);
+}
+
+/* ===== Modo Mapa ===== */
+/* position: relative deixa o selo de zoom se posicionar dentro da imagem */
+.imagem-mapa {
+  position: relative;
+}
+
+.selo-zoom {
+  position: absolute;
+  right: var(--espaco-m);
+  bottom: var(--espaco-m);
+  border: var(--borda);
+  border-radius: var(--raio-p);
+  padding: 4px var(--espaco-p);
+  background-color: var(--cor-fundo);
+  font-size: var(--texto-p);
+}
+
+/* Dica já revelada: rótulo pequeno e valor em destaque */
+.dica-revelada {
+  border: var(--borda);
+  background-color: var(--cor-destaque);
+  text-align: left;
+  color: var(--cor-texto);
+}
+
+.dica-rotulo {
+  display: block;
+  font-size: 12px;
+  color: var(--cor-texto-suave);
+}
+
+.dica-valor {
+  display: block;
+  font-size: var(--texto-g);
+  font-weight: bold;
+}
+
+/* Dica liberada que ainda não foi aberta */
+.dica-revelar {
+  border: var(--borda);
+  color: var(--cor-texto);
+  cursor: pointer;
+}
+
 /* ===== Tablet (a partir de 768px) ===== */
 @media (min-width: 768px) {
   .link-inicio {
     display: none;
   }
- 
+
   .abas {
     width: auto;
     display: flex;
   }
- 
+
   .modo-descricao,
   .modo-botao {
     display: block;
   }
- 
+
   /* Como jogar: três caixas lado a lado */
   .como-jogar {
     display: grid;
@@ -378,48 +492,47 @@
     border: none;
     padding: 0;
   }
- 
+
   .passo {
     border: var(--borda);
     border-radius: var(--raio);
     padding: var(--espaco-m);
   }
- 
+
   .jogos {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--espaco-m);
   }
 }
- 
+
 /* ===== Desktop (a partir de 1024px) ===== */
 @media (min-width: 1024px) {
   .titulo-principal {
     font-size: 36px;
   }
- 
+
   /* Modos em três colunas, com conteúdo centralizado */
   .modos {
     grid-template-columns: repeat(3, 1fr);
   }
- 
+
   .modo-card {
     flex-direction: column;
     text-align: center;
   }
- 
+
   /* Pista e dicas à esquerda, chute e histórico à direita */
   .jogo-colunas {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--espaco-g);
   }
- 
+
   .pista {
     min-height: 256px;
   }
- 
+
   .jogos {
     grid-template-columns: repeat(5, 1fr);
   }
 }
- 
