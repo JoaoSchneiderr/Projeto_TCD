@@ -9,7 +9,7 @@ type PistaProps = {
 
 // Pista do jogo secreto: muda conforme o modo escolhido
 function Pista({ modo, jogo, erros, acertou }: PistaProps) {
-  // Modo Capa: o borrão diminui a cada erro e some quando acerta
+  // Modo Capa: a capa pixelizada começa borrada, o borrão diminui a cada erro e some quando acerta
   let borrao = 12 - erros * 2
   if (borrao < 4) {
     borrao = 4
@@ -39,9 +39,12 @@ function Pista({ modo, jogo, erros, acertou }: PistaProps) {
 
       {modo.id === 'capa' && (
         <figure className="imagem-pista">
-          <span className="capa-falsa" style={{ filter: `blur(${borrao}px)` }}>
-            {jogo.nome}
-          </span>
+          <img
+            className="capa-imagem"
+            src={jogo.capa}
+            alt="Capa do jogo secreto"
+            style={{ filter: `blur(${borrao}px)` }}
+          />
           <figcaption className="imagem-legenda">
             {acertou ? 'capa (agora sem blur)' : 'capa borrada'}
           </figcaption>

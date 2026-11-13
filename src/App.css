@@ -437,13 +437,17 @@ button.dica {
   border: var(--borda);
   border-radius: var(--raio);
   background-color: var(--cor-destaque);
+  overflow: hidden;
 }
 
-/* Nome do jogo no lugar da capa: o blur muda pelo style no componente Pista */
-.capa-falsa {
-  font-size: var(--texto-titulo);
-  font-weight: bold;
-  text-align: center;
+/* Capa do jogo secreto: a imagem é pequena (40x60) e o navegador amplia
+   mantendo os quadradinhos (pixelated). O blur muda pelo style no componente Pista */
+.capa-imagem {
+  height: 170px;
+  aspect-ratio: 2 / 3;
+  border: var(--borda);
+  border-radius: var(--raio-p);
+  image-rendering: pixelated;
 }
 
 .imagem-legenda {
@@ -473,13 +477,9 @@ button.dica {
 
 .acerto-capa {
   width: 64px;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 96px;
   border: var(--borda);
-  font-size: var(--texto-p);
-  color: var(--cor-texto-suave);
+  image-rendering: pixelated;
 }
 
 .acerto-nome {

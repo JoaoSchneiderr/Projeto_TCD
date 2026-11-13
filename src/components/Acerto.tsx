@@ -11,7 +11,7 @@ function Acerto({ jogo, onJogarDeNovo }: AcertoProps) {
     <article className="acerto">
       <h3 className="acerto-titulo">Você acertou!</h3>
       <div className="acerto-conteudo">
-        <div className="acerto-capa">capa</div>
+        <img className="acerto-capa" src={jogo.capa} alt={`Capa de ${jogo.nome}`} />
         <div>
           <p className="acerto-nome">{jogo.nome}</p>
           <p className="acerto-detalhe">

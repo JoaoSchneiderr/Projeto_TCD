@@ -10,6 +10,7 @@ export type Jogo = {
   empresa: string
   sinopse: string
   comentario: string
+  capa: string
 }
 
 // Formato de cada modo de jogo da listagem secundária

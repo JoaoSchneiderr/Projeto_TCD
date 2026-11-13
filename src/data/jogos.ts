@@ -15,6 +15,7 @@ export const jogos: Jogo[] = [
     sinopse:
       'Um mundo feito de blocos onde você coleta recursos, constrói o que quiser e sobrevive às noites cheias de monstros...',
     comentario: 'Perdi 500 horas construindo uma casa e ainda não terminei.',
+    capa: '/capas/minecraft.png',
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ export const jogos: Jogo[] = [
     sinopse:
       'Um prisioneiro escapa da execução quando um dragão ataca a vila e descobre que tem o poder de absorver a alma dessas criaturas...',
     comentario: 'Eu era um aventureiro como você, até levar uma flechada no joelho.',
+    capa: '/capas/skyrim.png',
   },
   {
     id: 3,
@@ -41,6 +43,7 @@ export const jogos: Jogo[] = [
     sinopse:
       'Um pequeno cavaleiro silencioso explora as ruínas de um reino de insetos esquecido debaixo da terra...',
     comentario: 'Difícil, lindo e com uma trilha sonora que não sai da cabeça.',
+    capa: '/capas/hollow-knight.png',
   },
   {
     id: 4,
@@ -54,6 +57,7 @@ export const jogos: Jogo[] = [
     sinopse:
       'Um maculado é chamado de volta às Terras Intermédias para reunir os fragmentos de um anel quebrado e se tornar lorde...',
     comentario: 'Morri 40 vezes para o mesmo chefe e voltaria para morrer mais.',
+    capa: '/capas/elden-ring.png',
   },
   {
     id: 5,
@@ -67,6 +71,7 @@ export const jogos: Jogo[] = [
     sinopse:
       'Um ouriço azul muito rápido corre por fases cheias de anéis para salvar os animais de um cientista malvado...',
     comentario: 'A fase da água me dá ansiedade até hoje.',
+    capa: '/capas/sonic.png',
   },
   {
     id: 6,
@@ -80,6 +85,7 @@ export const jogos: Jogo[] = [
     sinopse:
       'Um caçador de monstros de cabelos brancos atravessa reinos em guerra procurando a jovem que criou como filha...',
     comentario: 'Fui fazer uma missão secundária e passei a semana jogando cartas.',
+    capa: '/capas/witcher-3.png',
   },
   {
     id: 7,
@@ -93,6 +99,7 @@ export const jogos: Jogo[] = [
     sinopse:
       'Três criminosos muito diferentes planejam golpes em uma cidade ensolarada inspirada em Los Angeles...',
     comentario: 'Comprei em três gerações de console e compraria de novo.',
+    capa: '/capas/gta-v.png',
   },
   {
     id: 8,
@@ -106,6 +113,7 @@ export const jogos: Jogo[] = [
     sinopse:
       'Cansado do trabalho no escritório, você herda a antiga fazenda do avô e recomeça a vida em uma vila pequena...',
     comentario: 'Só mais um dia na fazenda... e já são 3 da manhã.',
+    capa: '/capas/stardew-valley.png',
   },
   {
     id: 9,
@@ -119,6 +127,7 @@ export const jogos: Jogo[] = [
     sinopse:
       'Uma jovem decide escalar uma montanha misteriosa enquanto enfrenta a própria ansiedade pelo caminho...',
     comentario: 'Cada morango custou umas 100 mortes. Valeu cada uma.',
+    capa: '/capas/celeste.png',
   },
   {
     id: 10,
@@ -132,6 +141,7 @@ export const jogos: Jogo[] = [
     sinopse:
       'O filho do deus dos mortos tenta fugir do submundo, morrendo e voltando a cada tentativa...',
     comentario: 'Morrer nunca foi tão divertido.',
+    capa: '/capas/hades.png',
   },
 ]
 
