@@ -18,9 +18,12 @@ function Pista({ modo, jogo, erros, acertou }: PistaProps) {
     borrao = 0
   }
 
-  // Modo Mapa: o zoom diminui a cada erro, mostrando mais do mapa
+  // Modo Mapa: a imagem começa ampliada e o zoom diminui a cada erro, mostrando mais do lugar
   let zoom = 4 - erros
   if (zoom < 1) {
+    zoom = 1
+  }
+  if (acertou) {
     zoom = 1
   }
 
@@ -53,7 +56,12 @@ function Pista({ modo, jogo, erros, acertou }: PistaProps) {
 
       {modo.id === 'mapa' && (
         <figure className="imagem-pista imagem-mapa">
-          <figcaption className="imagem-legenda">recorte do mapa (zoom)</figcaption>
+          <img
+            className="mapa-imagem"
+            src={jogo.mapa}
+            alt="Recorte do mapa do jogo secreto"
+            style={{ transform: `scale(${zoom})` }}
+          />
           <span className="selo-zoom">zoom {zoom}x</span>
         </figure>
       )}

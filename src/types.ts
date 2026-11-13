@@ -11,6 +11,7 @@ export type Jogo = {
   sinopse: string
   comentario: string
   capa: string
+  mapa: string
 }
 
 // Formato de cada modo de jogo da listagem secundária

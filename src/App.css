@@ -507,6 +507,17 @@ button.dica {
   position: relative;
 }
 
+/* A imagem ocupa todo o quadro; o scale do componente Pista faz o zoom
+   e o overflow: hidden do quadro corta o que passa da borda */
+.mapa-imagem {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
 .selo-zoom {
   position: absolute;
   right: var(--espaco-m);
