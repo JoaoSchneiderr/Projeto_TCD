@@ -14,6 +14,7 @@ import Acerto from './components/Acerto'
 import ListaChutes from './components/ListaChutes'
 import GradeJogos from './components/GradeJogos'
 import Rodape from './components/Rodape'
+import Carregando from './components/Carregando'
 
 function App() {
   // ===== Estado =====
@@ -23,6 +24,8 @@ function App() {
   const [jogos, setJogos] = useState<Jogo[]>([])
   // Jogo que o jogador precisa descobrir (null até os jogos chegarem)
   const [jogoSecreto, setJogoSecreto] = useState<Jogo | null>(null)
+  // true enquanto o fetch não terminou
+  const [carregando, setCarregando] = useState(true)
   // Jogos já chutados, do mais recente para o mais antigo
   const [chutes, setChutes] = useState<Jogo[]>([])
   // Rótulos das dicas que o jogador já revelou
@@ -37,6 +40,7 @@ function App() {
       const dados = await buscarJogos()
       setJogos(dados)
       setJogoSecreto(sortearJogo(dados))
+      setCarregando(false)
     }
     carregarJogos()
   }, [])
@@ -101,6 +105,9 @@ function App() {
               onTrocarModo={escolherModo}
               onVoltarInicio={voltarInicio}
             />
+
+            {/* Enquanto os dados não chegam */}
+            {carregando && <Carregando />}
 
             {/* A área do jogo só aparece depois que os jogos chegam */}
             {jogoSecreto && (
