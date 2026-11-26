@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import type { Jogo } from './types'
-import { jogos, sortearJogo } from './data/jogos'
+import { buscarJogos, sortearJogo } from './data/jogos'
 import { modos } from './data/modos'
 import Apresentacao from './components/Apresentacao'
 import ListaModos from './components/ListaModos'
@@ -19,8 +19,10 @@ function App() {
   // ===== Estado =====
   // Modo escolhido (null = tela inicial)
   const [modoAtivo, setModoAtivo] = useState<string | null>(null)
-  // Jogo que o jogador precisa descobrir (sorteado ao abrir a página)
-  const [jogoSecreto, setJogoSecreto] = useState<Jogo>(() => sortearJogo(jogos))
+  // Jogos da listagem principal (começa vazio e é preenchido pelo fetch)
+  const [jogos, setJogos] = useState<Jogo[]>([])
+  // Jogo que o jogador precisa descobrir (null até os jogos chegarem)
+  const [jogoSecreto, setJogoSecreto] = useState<Jogo | null>(null)
   // Jogos já chutados, do mais recente para o mais antigo
   const [chutes, setChutes] = useState<Jogo[]>([])
   // Rótulos das dicas que o jogador já revelou
@@ -28,9 +30,20 @@ function App() {
   // Tema da página
   const [temaEscuro, setTemaEscuro] = useState(false)
 
+  // ===== Busca dos dados externos =====
+  // O array vazio [] faz o efeito rodar só uma vez, quando a página abre
+  useEffect(() => {
+    async function carregarJogos() {
+      const dados = await buscarJogos()
+      setJogos(dados)
+      setJogoSecreto(sortearJogo(dados))
+    }
+    carregarJogos()
+  }, [])
+
   // ===== Valores calculados a partir do estado =====
   const modo = modos.find((item) => item.id === modoAtivo)
-  const acertou = chutes.some((chute) => chute.id === jogoSecreto.id)
+  const acertou = jogoSecreto !== null && chutes.some((chute) => chute.id === jogoSecreto.id)
   const erros = chutes.length - (acertou ? 1 : 0)
   const dicasLiberadas = erros >= 3
 
@@ -89,40 +102,43 @@ function App() {
               onVoltarInicio={voltarInicio}
             />
 
-            <div className="conteudo jogo">
-              <div className="jogo-colunas">
-                {/* Coluna da esquerda no desktop: pista e dicas */}
-                <div>
-                  <Pista modo={modo} jogo={jogoSecreto} erros={erros} acertou={acertou} />
-                  {!acertou && (
-                    <Dicas
-                      jogo={jogoSecreto}
-                      liberadas={dicasLiberadas}
-                      reveladas={dicasReveladas}
-                      onRevelar={revelarDica}
-                    />
-                  )}
+            {/* A área do jogo só aparece depois que os jogos chegam */}
+            {jogoSecreto && (
+              <div className="conteudo jogo">
+                <div className="jogo-colunas">
+                  {/* Coluna da esquerda no desktop: pista e dicas */}
+                  <div>
+                    <Pista modo={modo} jogo={jogoSecreto} erros={erros} acertou={acertou} />
+                    {!acertou && (
+                      <Dicas
+                        jogo={jogoSecreto}
+                        liberadas={dicasLiberadas}
+                        reveladas={dicasReveladas}
+                        onRevelar={revelarDica}
+                      />
+                    )}
+                  </div>
+
+                  {/* Coluna da direita no desktop: chute e histórico */}
+                  <div className="area-chute">
+                    <p className="tentativas">Tentativas: {chutes.length}</p>
+                    {acertou ? (
+                      <Acerto jogo={jogoSecreto} onJogarDeNovo={jogarDeNovo} />
+                    ) : (
+                      <FormChute jogos={jogos} onChutar={chutar} />
+                    )}
+                    <ListaChutes chutes={chutes} jogoSecreto={jogoSecreto} />
+                  </div>
                 </div>
 
-                {/* Coluna da direita no desktop: chute e histórico */}
-                <div className="area-chute">
-                  <p className="tentativas">Tentativas: {chutes.length}</p>
-                  {acertou ? (
-                    <Acerto jogo={jogoSecreto} onJogarDeNovo={jogarDeNovo} />
-                  ) : (
-                    <FormChute jogos={jogos} onChutar={chutar} />
-                  )}
-                  <ListaChutes chutes={chutes} jogoSecreto={jogoSecreto} />
-                </div>
+                <GradeJogos
+                  jogos={jogos}
+                  chutes={chutes}
+                  jogoSecreto={jogoSecreto}
+                  onChutar={chutar}
+                />
               </div>
-
-              <GradeJogos
-                jogos={jogos}
-                chutes={chutes}
-                jogoSecreto={jogoSecreto}
-                onChutar={chutar}
-              />
-            </div>
+            )}
           </section>
         )}
       </main>
