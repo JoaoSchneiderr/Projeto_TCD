@@ -15,6 +15,7 @@ import ListaChutes from './components/ListaChutes'
 import GradeJogos from './components/GradeJogos'
 import Rodape from './components/Rodape'
 import Carregando from './components/Carregando'
+import ErroCarregamento from './components/ErroCarregamento'
 
 function App() {
   // ===== Estado =====
@@ -26,6 +27,8 @@ function App() {
   const [jogoSecreto, setJogoSecreto] = useState<Jogo | null>(null)
   // true enquanto o fetch não terminou
   const [carregando, setCarregando] = useState(true)
+  // Mensagem de erro para o usuário (null = sem erro)
+  const [erro, setErro] = useState<string | null>(null)
   // Jogos já chutados, do mais recente para o mais antigo
   const [chutes, setChutes] = useState<Jogo[]>([])
   // Rótulos das dicas que o jogador já revelou
@@ -37,10 +40,19 @@ function App() {
   // O array vazio [] faz o efeito rodar só uma vez, quando a página abre
   useEffect(() => {
     async function carregarJogos() {
-      const dados = await buscarJogos()
-      setJogos(dados)
-      setJogoSecreto(sortearJogo(dados))
-      setCarregando(false)
+      try {
+        const dados = await buscarJogos()
+        setJogos(dados)
+        setJogoSecreto(sortearJogo(dados))
+      } catch {
+        // Entra aqui se a internet cair, o arquivo não existir ou o JSON vier inválido
+        setErro(
+          'Não foi possível carregar a lista de jogos. Verifique sua conexão e tente de novo.',
+        )
+      } finally {
+        // Com sucesso ou com erro, o carregamento terminou
+        setCarregando(false)
+      }
     }
     carregarJogos()
   }, [])
@@ -108,6 +120,9 @@ function App() {
 
             {/* Enquanto os dados não chegam */}
             {carregando && <Carregando />}
+
+            {/* Se o fetch falhou */}
+            {erro && <ErroCarregamento mensagem={erro} />}
 
             {/* A área do jogo só aparece depois que os jogos chegam */}
             {jogoSecreto && (
