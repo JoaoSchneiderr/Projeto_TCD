@@ -556,6 +556,74 @@ button.dica {
   cursor: pointer;
 }
 
+/* ===== Estado de carregando (esqueleto da grade) ===== */
+.carregando-texto {
+  margin-top: var(--espaco-g);
+  margin-bottom: var(--espaco-m);
+  font-size: var(--texto-g);
+  text-align: center;
+}
+
+/* Card cinza com o mesmo tamanho de um card de jogo */
+.esqueleto-card {
+  min-height: 96px;
+  border: 2px solid var(--cor-borda-suave);
+  border-radius: var(--raio);
+  padding: var(--espaco-m) var(--espaco-p);
+  animation: piscar 1.2s ease-in-out infinite;
+}
+
+/* Linhas cinzas no lugar do nome e do gênero */
+.esqueleto-linha {
+  display: block;
+  height: 14px;
+  margin-bottom: var(--espaco-p);
+  width: 80%;
+  border-radius: var(--raio-p);
+  background-color: var(--cor-escondido);
+}
+
+.esqueleto-linha-curta {
+  width: 50%;
+}
+
+/* Animação que faz os cards piscarem enquanto carrega */
+@keyframes piscar {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* ===== Estado de erro ===== */
+.erro-carregamento {
+  margin-top: var(--espaco-g);
+  border: 2px solid var(--cor-erro);
+  border-radius: var(--raio);
+  padding: var(--espaco-m);
+  background-color: var(--cor-erro-fundo);
+  text-align: center;
+}
+
+.erro-titulo {
+  font-size: var(--texto-g);
+  font-weight: bold;
+}
+
+.erro-mensagem {
+  margin-top: var(--espaco-p);
+  font-size: var(--texto-p);
+}
+
+/* No celular o botão ocupa a largura toda */
+.erro-botao {
+  width: 100%;
+  margin-top: var(--espaco-m);
+}
+
 /* ===== Tablet (a partir de 768px) ===== */
 @media (min-width: 768px) {
   .link-inicio {
@@ -591,6 +659,22 @@ button.dica {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--espaco-m);
   }
+
+  .carregando-texto {
+    text-align: left;
+  }
+
+  /* Caixa de erro mais estreita e centralizada */
+  .erro-carregamento {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: var(--espaco-g);
+  }
+
+  .erro-botao {
+    width: auto;
+  }
 }
 
 /* ===== Desktop (a partir de 1024px) ===== */
@@ -622,5 +706,9 @@ button.dica {
 
   .jogos {
     grid-template-columns: repeat(5, 1fr);
+  }
+
+  .esqueleto-card {
+    min-height: 112px;
   }
 }
