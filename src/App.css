@@ -598,6 +598,32 @@ button.dica {
   }
 }
 
+/* ===== Estado de erro ===== */
+.erro-carregamento {
+  margin-top: var(--espaco-g);
+  border: 2px solid var(--cor-erro);
+  border-radius: var(--raio);
+  padding: var(--espaco-m);
+  background-color: var(--cor-erro-fundo);
+  text-align: center;
+}
+
+.erro-titulo {
+  font-size: var(--texto-g);
+  font-weight: bold;
+}
+
+.erro-mensagem {
+  margin-top: var(--espaco-p);
+  font-size: var(--texto-p);
+}
+
+/* No celular o botão ocupa a largura toda */
+.erro-botao {
+  width: 100%;
+  margin-top: var(--espaco-m);
+}
+
 /* ===== Tablet (a partir de 768px) ===== */
 @media (min-width: 768px) {
   .link-inicio {
@@ -636,6 +662,18 @@ button.dica {
 
   .carregando-texto {
     text-align: left;
+  }
+
+  /* Caixa de erro mais estreita e centralizada */
+  .erro-carregamento {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: var(--espaco-g);
+  }
+
+  .erro-botao {
+    width: auto;
   }
 }
 
