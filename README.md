@@ -51,7 +51,7 @@ João Lucas Schneider
 
 ## Link vídeo com todas as fases
 
-FASE 1: https://www.youtube.com/watch?v=MUl1XNIRLQw
-FASE 2: https://www.youtube.com/watch?v=zjSW7RxPybY
-FASE 3: https://www.youtube.com/watch?v=3rnJOCi7D9c
-FASE 4: https://www.youtube.com/watch?v=GNb0mxcsAXI
+- FASE 1: https://www.youtube.com/watch?v=MUl1XNIRLQw
+- FASE 2: https://www.youtube.com/watch?v=zjSW7RxPybY
+- FASE 3: https://www.youtube.com/watch?v=3rnJOCi7D9c
+- FASE 4: https://www.youtube.com/watch?v=GNb0mxcsAXI
